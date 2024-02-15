@@ -1,0 +1,70 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  Exclude:
+    - 'db/*/'
+    - 'config/*/'
+    - 'script/*/'
+    - 'bin/*'
+    - 'vendor/*/'
+Bundler/OrderedGems:
+  Enabled: false
+Layout/ExtraSpacing:
+  Enabled: false
+Layout/SpaceInsidePercentLiteralDelimiters:
+  Enabled: false
+StringLiterals:
+  Enabled: false
+Style/BlockComments:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/SymbolArray:
+  Enabled: false
+Rails/FilePath:
+  Enabled: false
+Naming/RescuedExceptionsVariableName:
+  Enabled: false
+Style/PreferredHashMethods:
+  Enabled: false
+Style/NumericPredicate:
+  Enabled: false
+Style/HashSyntax:
+  EnforcedShorthandSyntax: either
+RSpec/NestedGroups:
+  Max: 4
+Layout/ClosingParenthesisIndentation:
+  Enabled: false
+Layout/EndAlignment:
+  Enabled: false
+Layout/ArgumentAlignment:
+  Enabled: false
+Layout/ElseAlignment:
+  Enabled: false
+RSpec/ExampleLength:
+  CountAsOne: ['array', 'heredoc', 'hash']
+Layout/IndentationWidth:
+  Enabled: false
+RSpec/NamedSubject:
+  Enabled: false
+RSpec/HookArgument:
+  Enable: false
+Metrics/MethodLength:
+  CountAsOne: ['array', 'heredoc', 'hash']
+  Max: 15
+RSpec/StubbedMock:
+  Enabled: false
+RSpec/AnyInstance:
+  Enabled: false
+Metrics/ClassLength:
+  CountAsOne: ['array', 'heredoc', 'hash']
+Rails/DynamicFindBy:
+  Enabled: false
+Metrics/AbcSize:
+  Max: 20
+Lint/MissingSuper:
+  Enabled: false
+Style/StringLiteralsInInterpolation:
+  Enabled: false
