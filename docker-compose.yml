@@ -1,0 +1,41 @@
+version: '3.7'
+
+services:
+  app:
+    build: 
+      context: .
+      target: release
+    entrypoint: 'sh docker-entrypoint.sh'
+    command: 'rails s -b 0.0.0.0 -p 3000'
+    env_file:
+      - .env.docker
+    volumes:
+      - .:/usr/src/app
+      - bundle_data:/usr/local/bundle
+    networks:
+      - app_network
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+
+  db:
+    image: mysql:5.7
+    restart: always
+    env_file:
+      - .env.docker
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app_network
+
+volumes:
+  bundle_data:
+  db_data:
+
+networks:
+  app_network:
