@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Avaliacao < ApplicationRecord
   belongs_to :projeto
   has_many :notas, dependent: :destroy

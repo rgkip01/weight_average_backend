@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Criterio < ApplicationRecord
   has_many :notas, dependent: :destroy
 
