@@ -6,10 +6,12 @@ class Projeto < ApplicationRecord
 
   after_save :atualizar_media_total
 
+  validates :nome, presence: true
+
   private
 
   def atualizar_media_total
     servico = CalculoMediaService.new(projeto: self)
-    self.update_column(:media_total, servico.calcular_media_total)
+    update_column(:media_total, servico.calcular_media_total)
   end
 end

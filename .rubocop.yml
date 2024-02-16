@@ -9,6 +9,7 @@ AllCops:
     - 'script/*/'
     - 'bin/*'
     - 'vendor/*/'
+  SuggestExtensions: false
 Bundler/OrderedGems:
   Enabled: false
 Layout/ExtraSpacing:
@@ -51,12 +52,18 @@ RSpec/NamedSubject:
   Enabled: false
 RSpec/HookArgument:
   Enable: false
+RSpec/EmptyExampleGroup:
+  Enable: false
+RSpec/MessageSpies:
+  Enable: false
 Metrics/MethodLength:
   CountAsOne: ['array', 'heredoc', 'hash']
   Max: 15
 RSpec/StubbedMock:
   Enabled: false
 RSpec/AnyInstance:
+  Enabled: false
+RSpec/ExampleLength:
   Enabled: false
 Metrics/ClassLength:
   CountAsOne: ['array', 'heredoc', 'hash']
