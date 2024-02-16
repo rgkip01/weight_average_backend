@@ -20,4 +20,8 @@ class CalculoMediaService
 
     (@projeto.avaliacoes.sum { |avaliacao| calcular_media_ponderada(avaliacao) } / @projeto.avaliacoes.count).round(2)
   end
+
+  private
+
+  attr_reader :avaliacao, :projeto
 end
