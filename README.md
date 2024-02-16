@@ -34,7 +34,7 @@ Certifique-se de ter o Docker e o Docker Compose instalados.
 
 1. **Clone o Repositório**:
 
-`git clone git@github.com:rgkip01/prosas_backend.git`
+`git clone git@github.com:rgkip01/weight_average_backend.git`
 
 `cd prosas_weight_average_backend`
 
