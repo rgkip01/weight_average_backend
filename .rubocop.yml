@@ -65,6 +65,12 @@ RSpec/AnyInstance:
   Enabled: false
 RSpec/ExampleLength:
   Enabled: false
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: false
+RSpec/LetSetup:
+  Enable: false
 Metrics/ClassLength:
   CountAsOne: ['array', 'heredoc', 'hash']
 Rails/DynamicFindBy:

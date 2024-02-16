@@ -2,8 +2,8 @@
 
 FactoryBot.define do
   factory :nota do
-    nota { 1.5 }
-    avaliacao { nil }
-    criterio { nil }
+    nota { Faker::Number.between(from: 0.0, to: 10.0) }
+    avaliacao
+    criterio
   end
 end
