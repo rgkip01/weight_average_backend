@@ -3,9 +3,9 @@
 module V1
   class ProjetosController < ApplicationController
     def create
-     @projetos = Projeto.new(projeto_params)
+     @projeto = Projeto.new(projeto_params)
 
-     if @projeto.save!
+     if @projeto.save
       render json: @projeto, status: :created
      else
       render json: @projeto.errors, status: :unprocessable_entity

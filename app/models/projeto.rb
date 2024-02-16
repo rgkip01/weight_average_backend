@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Projeto < ApplicationRecord
-  has_many :avaliacoes, dependent: :destroy
+  has_many :avaliacoes, class_name: 'Avaliacao', dependent: :destroy
   accepts_nested_attributes_for :avaliacoes
 
   after_save :atualizar_media_total

@@ -1,10 +1,18 @@
-# frozen_string_literal: true
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+# db/seeds.rb
+5.times do |i|
+  criterio = Criterio.create(peso: rand(1.0..5.0))
+  projeto = Projeto.create(nome: "Projeto #{i + 1}", media_total: 0.0)
+
+  5.times do
+    avaliacao = Avaliacao.create(projeto: projeto, media_ponderada: 0.0)
+
+    5.times do
+      Nota.create(nota: rand(1.0..10.0), avaliacao: avaliacao, criterio: criterio)
+    end
+  end
+end
+
+Projeto.find_each do |projeto|
+  servico_projeto = CalculoMediaService.new(projeto: projeto)
+  projeto.update(media_total: servico_projeto.calcular_media_total)
+end
