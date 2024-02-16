@@ -3,13 +3,20 @@
 class Criterio < ApplicationRecord
   has_many :notas, dependent: :destroy
 
-  after_update :reculcular_medias
+  after_update :recalcular_medias
 
   private
 
-  def reculcular_medias
-    notas.each do |nota|
-      CalculoMedidaService.atualizar_medias(nota.avaliacao)
+  def recalcular_medias
+    notas.includes(:avaliacao).each do |nota|
+      avaliacao = nota.avaliacao
+      projeto = avaliacao.projeto
+
+      servico_avaliacao = CalculoMediaService.new(avaliacao: avaliacao)
+      avaliacao.update_column(:media_ponderada, servico_avaliacao.calcular_media_ponderada)
+
+      servico_projeto = CalculoMediaService.new(projeto: projeto)
+      projeto.update_column(:media_total, servico_projeto.calcular_media_total)
     end
   end
 end
