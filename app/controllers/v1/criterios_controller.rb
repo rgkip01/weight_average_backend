@@ -7,7 +7,7 @@ module V1
     def create
       @criterio = Criterio.new(criterio_params)
 
-      if @criterio.save!
+      if @criterio.save
         render json: @criterio, status: :created
       else
         render json: @criterio.errors, status: :unprocessable_entity

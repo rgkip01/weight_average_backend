@@ -13,10 +13,13 @@ module V1
     end
 
     def index
-      per_page = params[:per_page].present? ? [params[:per_page].to_i, 100].min : 25
-      @projetos = Projeto.page(params[:page]).per(per_page)
-
-      render json: @projetos, status: :ok
+      if params[:per_page].to_i > 100
+        render json: { error: 'Per page limit is 100' }, status: :unprocessable_entity
+      else
+        per_page = params[:per_page].present? ? [params[:per_page].to_i, 100].min : 25
+        @projetos = Projeto.page(params[:page]).per(per_page)
+        render json: @projetos, status: :ok
+      end
     end
 
     def projeto_params
