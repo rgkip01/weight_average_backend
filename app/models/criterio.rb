@@ -5,10 +5,12 @@ class Criterio < ApplicationRecord
 
   after_update :recalcular_medias
 
+  validates :peso, presence: true
+
   private
 
   def recalcular_medias
-    notas.includes(:avaliacao).each do |nota|
+    notas.includes(:avaliacao).find_each do |nota|
       avaliacao = nota.avaliacao
       projeto = avaliacao.projeto
 

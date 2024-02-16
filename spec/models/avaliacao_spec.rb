@@ -3,8 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe Avaliacao, type: :model do
-  it { is_expected.to belong_to(:projeto) }
-  it { is_expected.to have_many(:notas).dependent(:destroy) }
+  describe 'Validações' do
+    it { is_expected.to belong_to(:projeto) }
+    it { is_expected.to have_many(:notas).dependent(:destroy) }
+    it { is_expected.to validate_presence_of(:media_ponderada) }
+  end
 
   describe 'callbacks' do
     let(:avaliacao) { create(:avaliacao) }

@@ -3,10 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe Nota, type: :model do
-  it { is_expected.to belong_to(:avaliacao) }
-  it { is_expected.to belong_to(:criterio) }
-
   describe 'validações' do
+    it { is_expected.to belong_to(:avaliacao) }
+    it { is_expected.to belong_to(:criterio) }
+    it { is_expected.to validate_presence_of(:nota) }
+
     it 'é válida com uma nota, avaliacao e criterio' do
       nota = build(:nota)
       expect(nota).to be_valid

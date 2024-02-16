@@ -3,7 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe Criterio, type: :model do
-  it { is_expected.to have_many(:notas).dependent(:destroy) }
+  describe 'Validações' do
+    it { is_expected.to have_many(:notas).dependent(:destroy) }
+    it { is_expected.to validate_presence_of(:peso) }
+  end
 
   describe 'callbacks' do
     let(:criterio) { create(:criterio) }
