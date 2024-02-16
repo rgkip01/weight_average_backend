@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   api_version(:module => "V1", :path => {:value => "v1"}) do
-    resources :projects, only: [:create, :index]
-    resources :criteria, only: [:create]
+    resources :projetos, only: [:create, :index]
+    resources :criterios, only: [:create, :update]
   end
 end
