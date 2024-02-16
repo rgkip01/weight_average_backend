@@ -14,6 +14,7 @@ gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 gem 'versionist'
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug'

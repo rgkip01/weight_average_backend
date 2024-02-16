@@ -13,7 +13,8 @@ module V1
     end
 
     def index
-      @projetos = Projeto.all
+      per_page = params[:per_page].present? ? [params[:per_page].to_i, 100].min : 25
+      @projetos = Projeto.page(params[:page]).per(per_page)
 
       render json: @projetos, status: :ok
     end
