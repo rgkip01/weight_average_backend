@@ -36,7 +36,7 @@ Certifique-se de ter o Docker e o Docker Compose instalados.
 
 `git clone git@github.com:rgkip01/weight_average_backend.git`
 
-`cd prosas_weight_average_backend`
+`cd weight_average_backend`
 
 2. **Execute o Script de Setup**:
 Este projeto inclui um script chamado `setup_project.sh` que automatiza o processo de construção e configuração do projeto.
