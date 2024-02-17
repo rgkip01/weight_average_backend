@@ -41,7 +41,7 @@ Certifique-se de ter o Docker e o Docker Compose instalados.
 2. **Execute o Script de Setup**:
 Este projeto inclui um script chamado `setup_project.sh` que automatiza o processo de construção e configuração do projeto.
 
-**Obs: Esse step leva um pouquinho mais de tempo, pois ele irá popular a base com os 1000 projetos conforme esperado** 
+**Obs: Esse step leva um pouquinho mais de tempo, pois ele irá popular a base com os 1000 projetos conforme esperado e automatiza todo setup inicial que teríamos que fazer na mão** 
 
 `chmod +x setup_project.sh`
 
